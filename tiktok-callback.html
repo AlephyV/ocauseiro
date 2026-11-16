@@ -1,0 +1,10 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer">
+<title>Login TikTok – O Causeiro</title><link rel="stylesheet" href="estilo.css"><main>
+<h1>Login do TikTok</h1><div id="r"><p>Carregando…</p></div>
+<script>
+const q=new URLSearchParams(location.search),r=document.getElementById('r');
+if(q.get('code')){const u=location.href;r.innerHTML='<p>Copie o endereço abaixo e cole no terminal:</p><code id="c"></code><p><button id="b">Copiar</button></p>';document.getElementById('c').textContent=u;
+document.getElementById('b').onclick=()=>{navigator.clipboard.writeText(u).then(()=>{document.getElementById('b').textContent='Copiado!'})};}
+else r.textContent='Nenhum código recebido'+(q.get('error')?': '+q.get('error'):'')+'.';
+</script></main></html>
